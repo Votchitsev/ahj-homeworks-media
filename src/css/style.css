@@ -1,0 +1,36 @@
+body {
+  font-size: 20px;
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-width: 720px;
+  height: 80vh;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgb(161, 168, 174);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.posts-container {
+  height: 90%;
+  background-color: aliceblue;
+}
+
+.textForm {
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  padding: 25px;
+}
+
+.textForm > input[type="text"] {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  font-size: inherit;
+}

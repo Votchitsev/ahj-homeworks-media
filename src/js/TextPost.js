@@ -1,37 +1,63 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-useless-constructor */
-/**
- * Текстовый пост
- */
+import parseDate from './service';
+
 class TextPost {
-  /**
-   * @param {*} template HTML element
-   * @param {String} postText текст поста
-   */
-  // eslint-disable-next-line no-empty-function
-  constructor(template, postText) {
+  constructor(postText) {
+    this.postText = postText;
+    this.post = undefined;
 
+    this.create = this.create.bind(this);
+    this.getGeolocation = this.getGeolocation.bind(this);
+    this.geo = this.geo.bind(this);
+
+    console.log();
+    this.getGeolocation();
   }
 
-  /**
-   * Возвращает готовый пост для отображения
-   */
   create() {
+    // return `
+    // <div class="post">
+    //   <div class="post-title">${parseDate(Date.now())}</div>
+    //   <div class="post-content">${this.postText}</div>
+    //   <div class="post-geo"></div>
+    // </div>
+    // `;
 
+    this.post = document.createElement('div');
+    const postTitle = document.createElement('div');
+    const postContent = document.createElement('div');
+    const postGeo = document.createElement('div');
+
+    this.post.classList.add('post');
+
+    postTitle.classList.add('post-title');
+    postTitle.textContent = parseDate(Date.now());
+    this.post.append(postTitle);
+
+    postContent.classList.add('post-content');
+    postContent.textContent = this.postText;
+    this.post.append(postContent);
+
+    postGeo.classList.add('post-geo');
+    this.post.append(postGeo);
+
+    return this.post;
   }
 
-  /**
-   * Получает геолокацию
-   */
   getGeolocation() {
-
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.geo, this.showErrorPopup);
+    } else {
+      this.showErrorPopup();
+    }
   }
-  /**
-   * Получает текущее время
-   */
 
-  getCurrentTime() {
+  geo(position) {
+    const geolocation = `GEO ${position.coords.latitude} ${position.coords.longitude}`;
+    this.post.querySelector('.post-geo').textContent = geolocation;
+  }
 
+  showErrorPopup() {
+    console.log('show error');
   }
 }
 

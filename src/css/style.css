@@ -34,3 +34,31 @@ body {
   padding: 10px;
   font-size: inherit;
 }
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-self: flex-end;
+  margin: 15px;
+  border: 1px solid black;
+  background-color: antiquewhite;
+}
+
+.post-title {
+  align-self: flex-end;
+  padding: 15px;
+}
+
+.post-content {
+  padding: 15px;
+}
+
+.post-geo {
+  padding: 15px;
+}

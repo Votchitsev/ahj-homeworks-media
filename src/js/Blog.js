@@ -1,35 +1,37 @@
-/**
- * Описывает поведение самого каркаса приложения, то-есть ленты постов
- */
 class Blog {
-  // eslint-disable-next-line no-useless-constructor, no-unused-vars, no-empty-function
-  constructor(_post) {
+  constructor(Post) {
+    this.Post = Post;
+    this.postsContainer = document.querySelector('.posts-container');
 
+    this.pushPost = this.pushPost.bind(this);
   }
 
-  /**
-   * Запуск необходимых функций для инициализации
-   */
   init() {
-
+    this.addListeners();
   }
 
-  /**
-   * Добавляет обработчики событий
-   */
   addListeners() {
+    const form = document.querySelector('.textForm');
 
+    form.addEventListener('submit', this.pushPost);
   }
 
-  /**
-   * Отображает пост в ленте
-   */
-  pushPost() {
+  pushPost(e) {
+    e.preventDefault();
 
+    const textPost = e.target.querySelector('input').value;
+    const post = new this.Post(textPost);
+
+    const postHTMLElement = post.create();
+    console.log(postHTMLElement);
+    if (!postHTMLElement) {
+      return;
+    }
+
+    this.postsContainer.insertAdjacentElement('beforeend', postHTMLElement);
+
+    e.target.querySelector('input').value = '';
   }
-  /**
-   * Ввод данных текстового сообщения
-   */
 
   textFormOnSubmit() {
 

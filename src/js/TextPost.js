@@ -9,7 +9,6 @@ class TextPost {
     this.getGeolocation = this.getGeolocation.bind(this);
     this.geo = this.geo.bind(this);
 
-    console.log();
     this.getGeolocation();
   }
 
@@ -52,7 +51,7 @@ class TextPost {
   }
 
   geo(position) {
-    const geolocation = `GEO ${position.coords.latitude} ${position.coords.longitude}`;
+    const geolocation = `[${position.coords.latitude}, ${position.coords.longitude}]`;
     this.post.querySelector('.post-geo').textContent = geolocation;
   }
 

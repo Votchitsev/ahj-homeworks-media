@@ -62,3 +62,31 @@ body {
 .post-geo {
   padding: 15px;
 }
+
+.error-popup {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  width: 400px;
+  height: fit-content;
+  background-color: aquamarine;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+
+  translate: -50% -50%;
+}
+
+.error-popup > input[type="text"] {
+  margin: 20px;
+  padding: 10px;
+}
+
+.input-btnth-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel {
+  margin-right: 15px;
+}

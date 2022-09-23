@@ -90,3 +90,7 @@ body {
 .cancel {
   margin-right: 15px;
 }
+
+.show {
+  display: flex;
+}

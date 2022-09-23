@@ -21,9 +21,8 @@ class Blog {
 
     const textPost = e.target.querySelector('input').value;
     const post = new this.Post(textPost);
-
     const postHTMLElement = post.create();
-    console.log(postHTMLElement);
+
     if (!postHTMLElement) {
       return;
     }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media</title>
+<script defer src="main.js"></script></head> 
+<body>
+  <section class="blog">
+    <div class="posts-container"></div>
+    <form class="textForm">
+      <input type="text">
+    </form>
+  </section>
+  <form class="error-popup">
+    <div class="error-popup-title">Что-то пошло не так</div>
+    <p class="error-popup-content">
+      К сожалению нам не удалось определить ваше местоположение, пожалуйста,
+      дайте разрешение на использование геолокации, либо введите координаты вручную.
+    </p>
+    <input type="text" pattern="\[?\d+.\d+,\s?.?\d+.\d+\]?">
+    <div class="input-btnth-container">
+      <button class="cancel">Отмена</button>
+      <input type="submit" name="OK">
+    </div>
+  </form>
+</body>
+</html>

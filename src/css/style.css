@@ -38,6 +38,7 @@ body {
 .posts-container {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .post {
